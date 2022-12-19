@@ -5,5 +5,5 @@ CREATE TABLE employee (
 );
 
 INSERT INTO employee (name,email) VALUES
-("Asad","asad@gmail.com")
-;
+("Asad","asad@gmail.com"),
+("Abdul Rahman","abdul@gmail.com");
