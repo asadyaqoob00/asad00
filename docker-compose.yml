@@ -1,0 +1,25 @@
+version: '3.0'
+
+services:
+    web:
+        build: .
+        depends_on:
+            - mysql
+        volumes:
+            - ./app:/var/www/html/
+        ports:
+            - 1025:80
+
+    mysql:
+        image: mysql
+        restart: always
+        volumes:
+            - asaddb:/var/lib/mysql
+            - ./db:/docker-entrypoint-initdb.d/
+        environment:
+            MYSQL_ROOT_PASSWORD: 123
+            MYSQL_DATABASE: AsadDB
+        ports:
+          - 2342:3306
+volumes:
+  asaddb:
